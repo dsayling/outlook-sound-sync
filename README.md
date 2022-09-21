@@ -1,5 +1,8 @@
-![GitHub all releases](https://img.shields.io/github/downloads/dsayling/outlook-sound-sync/total)
 ![GitHub Release Date](https://img.shields.io/github/release-date/dsayling/outlook-sound-sync)
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black?logo=linkedin&color=blue
+[linkedin-url]: https://www.linkedin.com/in/drew-ayling
 
 # Outlook Sound Sync
 
