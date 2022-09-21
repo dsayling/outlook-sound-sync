@@ -4,9 +4,7 @@ on:
     branches:
       - main
     paths:
-     - 'com.outlook.sounds.sync.plist'
-     - 'soundsync.sh'
-     - 'install-outlook-sync.sh'
+     - 'src/**'
      - 'LICENSE'
       
 jobs:
