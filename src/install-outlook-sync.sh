@@ -11,9 +11,10 @@ echo "Using default sounds path"
 DEFAULT_PATH="$HOME/.outlook-sounds"
 # fi
 # make the directory and mv the soundsync script
+CUR_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 mkdir -p "$DEFAULT_PATH"
-cp ./soundsync.sh "$DEFAULT_PATH"
+cp "$CUR_DIR/soundsync.sh" "$DEFAULT_PATH"
 SCRIPT_PATH="$DEFAULT_PATH/soundsync.sh"
 
 # update the plist file with the user information
