@@ -1,0 +1,15 @@
+name: test
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+
+jobs:
+  test-setup:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: run install script
+      run: echo "" | ./src/install-outlook-sync.sh
+    
