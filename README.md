@@ -13,27 +13,31 @@ Outlook for MacOs has a really annoying "feature" where you cant actually update
 
 Luckily, they are just wav files that outlook loads and plays for each event.
 
-Unfortunately, Microsoft's Auto Update Tool will overwrite those files at any time if you try replacing them.
+Unfortunately, Microsoft's Auto Update Tool can overwrite those files at any point. So updating them manually isn't really an option. Unless you like copying files around manually.
+
+Originally I wrote a script to move the files back when I heard them again, but eventually gave up trying to run it every time I needed to.
 
 So, I built this.
 
 ## Install
 
-First run,
+1. Run this in your Terminal
 
-```
-curl -sSL https://raw.githubusercontent.com/dsayling/outlook-sound-sync/main/remote-install.sh | sh
-```
+    ```
+    curl -sSL https://raw.githubusercontent.com/dsayling/outlook-sound-sync/main/remote-install.sh | sh
+    ```
 
-As the install runs, it will extract the latest release from this repo and run [src/install-outlook-sync.sh]()
+    As the install runs, it will extract the latest release from this repo and run [src/install-outlook-sync.sh]()
 
-You will be asked for your password as elevated privileges are required to move the plist file to `/Library/LaunchDaemons` and to create the launchd process.
+    You will be asked for your password as elevated privileges are required to move the plist file to `/Library/LaunchDaemons` and to create the launchd process.
 
-After the installation and setup is complete, you will see the configuration directory `Add your .wav files here: some/path/here`.
+1. Note the configuration directory
 
-The default is `$HOME/.outlook-sounds/`, but whatever the directory, it should already be created for you.
+    After the installation and setup is complete, you will see the configuration directory `Add your .wav files here: some/path/here`.
 
-Now move to the next section.
+    The default is `$HOME/.outlook-sounds/`, but whatever the directory, it should already be created for you.
+
+1. Configure (see next section)
 
 ### Configure
 
@@ -43,9 +47,9 @@ You can add any of the following files to the directory from the setup:
 * `newmail.wav`
     * New email received
 * `mailsent.wav`
-    * When mail is sent
+    * Some email is sent
 * `nomail.wav`
-    * No new mail when syncing a mailbox
+    * No new email when syncing a mailbox
 * `welcome.wav`
     * Outlook startup sound
 * `mailerror.wav`
