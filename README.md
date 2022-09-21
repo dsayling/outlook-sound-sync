@@ -8,7 +8,7 @@
 
 Outlook Sound Sync is essentially a launchd script that will continually sync the sounds you want to play in Outlook.
 
-And if, its not obvious this is for MacOs only.
+And if it's not obvious, this is for macOS only.
 
 ## Background
 
