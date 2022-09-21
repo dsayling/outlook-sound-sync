@@ -7,6 +7,7 @@ on:
      - 'com.outlook.sounds.sync.plist'
      - 'soundsync.sh'
      - 'install-outlook-sync.sh'
+     - 'LICENSE'
       
 jobs:
   build:
