@@ -7,7 +7,7 @@
     <string>com.outlook.sync</string>
 
     <key>Program</key>
-    <!--Be sure to put your username here-->
+    <!--This will be updated via sed in install script-->
     <string>{SOUNDS_PATH}</string>
 
     <key>StartCalendarInterval</key>
@@ -28,4 +28,3 @@
 </dict>
 
 </plist>
-

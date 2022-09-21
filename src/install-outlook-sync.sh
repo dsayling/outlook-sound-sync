@@ -1,14 +1,15 @@
 #!/usr/bin/env sh
+
 # prompt the user for the location of the sounds files
 echo "Starting setup for outlook-sounds-sync"
 
-read -p "Sounds Path [$HOME/.outlook-sounds]:" DEFAULT_PATH
+# read -p "Sounds Path [$HOME/.outlook-sounds]:" DEFAULT_PATH
 
-if [ -z "$DEFAULT_PATH" ]
-then
-	echo "Using default sounds path"
-	DEFAULT_PATH="$HOME/.outlook-sounds"
-fi
+# if [ -z "$DEFAULT_PATH" ]
+# then
+echo "Using default sounds path"
+DEFAULT_PATH="$HOME/.outlook-sounds"
+# fi
 # make the directory and mv the soundsync script
 
 mkdir -p "$DEFAULT_PATH"
@@ -23,4 +24,3 @@ sudo mv com.outlook.sounds.sync.plist /Library/LaunchDaemons
 
 # load the new plist
 sudo launchctl load /Library/LaunchDaemons/com.outlook.sounds.sync.plist
-

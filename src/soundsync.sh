@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 
 outlookPath="/Applications/Microsoft Outlook.app/Contents/Frameworks/OutlookCore.framework/Versions/Current/Resources"
-# when you set this up as a root launchdaemon, you'll need to put the full path
-# or to a root path
+# we assume that this script is located with the sound files
 default_soundPath=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 allSounds=("goodbye.wav" "mailsent.wav" "nomail.wav" "welcome.wav" "mailerror.wav" "newmail.wav" "reminder.wav")
@@ -23,4 +22,3 @@ for sound in ${allSounds[@]}; do
     fi
     continue
 done
-
