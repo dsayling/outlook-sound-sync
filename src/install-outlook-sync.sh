@@ -8,8 +8,8 @@ read -p "Sounds Path [$HOME/.outlook-sounds]:" DEFAULT_PATH
 
 if [ -z "$DEFAULT_PATH" ]
 then
-	echo "Using default sounds path"
 	DEFAULT_PATH="$HOME/.outlook-sounds"
+	echo "Using default sounds path: $DEFAULT_PATH"
 fi
 
 # make the sounds directory and mv the soundsync script
@@ -21,6 +21,7 @@ SCRIPT_PATH="$DEFAULT_PATH/soundsync.sh"
 sed -i.bak "s@{SOUNDS_PATH}@$SCRIPT_PATH@" "$CUR_DIR/com.outlook.sounds.sync.plist"
 
 # move plist file to /Library/LaunchDaemons as root
+echo "You will be asked for your password here to move the launchd script to a root owned path"
 sudo mv com.outlook.sounds.sync.plist /Library/LaunchDaemons
 
 # load the new plist
