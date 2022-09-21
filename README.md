@@ -46,7 +46,7 @@ So, I built this.
 
 Now that your launchd script is setup, and you know where to put you wav files. Lets configure the sounds.
 
-You can add any of the following files to the directory from the setup:
+You can add any of the following files to the directory:
 * `newmail.wav`
     * New email received
 * `mailsent.wav`
