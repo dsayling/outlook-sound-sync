@@ -8,7 +8,7 @@
 
     <key>Program</key>
     <!--Be sure to put your username here-->
-    <string>/Users/drew.ayling/.outlook-sounds</string>
+    <string>{SOUNDS_PATH}</string>
 
     <key>StartCalendarInterval</key>
     <dict>
