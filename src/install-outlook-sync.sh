@@ -26,3 +26,9 @@ sudo mv com.outlook.sounds.sync.plist /Library/LaunchDaemons
 
 # load the new plist
 sudo launchctl load /Library/LaunchDaemons/com.outlook.sounds.sync.plist
+
+echo """
+Outlook Sound Sync setup complete...
+
+Add your .wav files here: $DEFAULT_PATH
+"""

@@ -1,20 +1,25 @@
+![GitHub all releases](https://img.shields.io/github/downloads/dsayling/outlook-sound-sync/total)
+![GitHub Release Date](https://img.shields.io/github/release-date/dsayling/outlook-sound-sync)
+
 # Outlook Sound Sync
 
-Outlook Sound Sync is essentially a launchd script that will continually sync the sounds you want to play in outlook.
+Outlook Sound Sync is essentially a launchd script that will continually sync the sounds you want to play in Outlook.
+
+And if, its not obvious this is for MacOs only.
 
 ## Background
 
-Outlook for mac has a really annoying "feature" where you cant actually update the sounds that come from the application.
+Outlook for MacOs has a really annoying "feature" where you cant actually update the sounds that come from the application.
 
 Luckily, they are just wav files that outlook loads and plays for each event.
 
-Unfortunately, Microsoft's Auto Update Tool will overwrite those files at any time.
+Unfortunately, Microsoft's Auto Update Tool will overwrite those files at any time if you try replacing them.
 
 So, I built this.
 
 ## Install
 
-Simply run,
+First run,
 
 ```
 curl -sSL https://raw.githubusercontent.com/dsayling/outlook-sound-sync/main/remote-install.sh | sh
@@ -24,7 +29,54 @@ As the install runs, it will extract the latest release from this repo and run [
 
 You will be asked for your password as elevated privileges are required to move the plist file to `/Library/LaunchDaemons` and to create the launchd process.
 
+After the installation and setup is complete, you will see the configuration directory `Add your .wav files here: some/path/here`.
+
+The default is `$HOME/.outlook-sounds/`, but whatever the directory, it should already be created for you.
+
+Now move to the next section.
+
+### Configure
+
+Now that your launchd script is setup, and you know where to put you wav files. Lets configure the sounds.
+
+You can add any of the following files to the directory from the setup:
+* `newmail.wav`
+    * New email received
+* `mailsent.wav`
+    * When mail is sent
+* `nomail.wav`
+    * No new mail when syncing a mailbox
+* `welcome.wav`
+    * Outlook startup sound
+* `mailerror.wav`
+    * When there's an error syncing a mailbox
+* `reminder.wav`
+    * Calendar and task reminders
+
+Maybe some [Warcraft 2](http://www.thanatosrealms.com/war2/horde-sounds) sounds? Or something from the [BigSoundBank](https://bigsoundbank.com/)?
+
+You don't have to update them all, whatever sounds you want to override, just place the ones you want to change in the configuration directory.
+
+To quickly get setup with the new sounds, restart your computer.
+
+That's it, your done.
+
 ## FAQ
 
 * Why use a system level launchd?
   * Simply because the installation of Office is usually, if not always done as root. So the wav files are also owned by root. Thus, we need to run the sync script as root.
+
+## Roadmap
+
+- [ ] Add formula to [dsayling/homebrew-tap]()
+- [ ] Support adding wav files during install process
+- [ ] Make 1 million USD
+- [ ] Improve README instructions
+
+## Contributions
+
+Feel free to open a PR and tell me what's wrong.
+
+## Bugs
+
+Feel free to open a issue to tell me what's wrong. Although, a PR would be appreciated.
