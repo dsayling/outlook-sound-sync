@@ -16,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run script
-        run: ./install-remote.sh
+        run: ./remote-install.sh
