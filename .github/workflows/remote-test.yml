@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Remote-test
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches: "main"
+    paths: remote-install.sh
+    
+  workflow_dispatch:
+
+jobs:
+  test-remote-install:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run script
+        run: ./install-remote.sh
