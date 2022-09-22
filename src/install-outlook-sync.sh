@@ -23,10 +23,13 @@ sed -i.bak "s@{SOUNDS_PATH}@$SCRIPT_PATH@" "$CUR_DIR/com.outlook.sounds.sync.pli
 # move plist file to /Library/LaunchDaemons as root
 echo "You will be asked for your password here to move the launchd script to a root owned path"
 sudo mv "$CUR_DIR/com.outlook.sounds.sync.plist" "/Library/LaunchDaemons"
+sudo chown root /Library/LaunchDaemons/com.outlook.sounds.sync.plist
+sudo chgrp wheel /Library/LaunchDaemons/com.outlook.sounds.sync.plist
 
 # load the new plist
 sudo launchctl load "/Library/LaunchDaemons/com.outlook.sounds.sync.plist"
 
+# complete
 echo """
 Outlook Sound Sync setup complete...
 
