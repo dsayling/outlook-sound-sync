@@ -79,6 +79,7 @@ That's it, your done.
 - [ ] Support adding wav files during install process
 - [ ] Make 1 million USD
 - [ ] Improve README instructions
+- [ ] Add test to force the launchd process to run and verify run.
 
 ## Contributions
 
