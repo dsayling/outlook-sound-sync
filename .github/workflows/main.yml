@@ -23,4 +23,11 @@ jobs:
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
+  test-release:
+    runs-on: macos-latest
+    needs: [build]
+    steps:
+      - name: Run test
+        run: curl -sSL https://raw.githubusercontent.com/dsayling/outlook-sound-sync/main/remote-install.sh | sh
+      
 
